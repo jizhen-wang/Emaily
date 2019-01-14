@@ -22,4 +22,7 @@ module.exports = app => {
         req.logout();
         res.send(req.user);
     });
+    app.get('/', (req, res) => {
+        res.send("<h1>Hello</h1>");
+    });
 };
