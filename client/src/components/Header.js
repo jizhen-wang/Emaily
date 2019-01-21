@@ -16,7 +16,7 @@ class Header extends Component {
                 console.log(this.props.auth);
                 return [
                     <li key="1"><Payments /></li>,
-                    <li key="1" style={{ margin: '0 10px' }}>Credits:{this.props.auth.credits}</li>,
+                    <li key="2" style={{ margin: '0 10px' }}>Credits:{this.props.auth.credits.toFixed(2)}</li>,
                     <li key="3" > <a href="/api/logout">Logout</a></li >
                 ];
         }
