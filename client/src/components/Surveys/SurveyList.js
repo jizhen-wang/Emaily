@@ -20,6 +20,7 @@ class SurveyList extends Component {
                             <div class="card-action">
                                 <a href="#!"> Yes: {survey.yes}</a>
                                 <a href="#!"> No: {survey.no}</a>
+                                <a className="right" href={'api/surveys/delete/' + survey._id}> <i class="material-icons">delete</i></a>
                             </div>
                         </div>
                     </div>

@@ -17,6 +17,17 @@ module.exports = app => {
 
         res.send(surveys);
     });
+    app.get('/api/surveys/delete/:surveyId', requireLogin, async (req, res) => {
+        await Survey.findOne({ _id: req.params.surveyId }, (err, survey) => {
+            if (err) {
+                return;
+            }
+            if (req.user._id.equals(survey._user)) {
+                survey.remove();
+            }
+        });
+        res.redirect('/surveys');
+    });
 
     app.get('/api/surveys/:surveyId/:choice', (req, res) => {
         res.send('Thanks for voting!');
